@@ -3,20 +3,19 @@ class Met1{
     public static void main(String args[]){
         Scanner input = new Scanner(System.in);
 
+        double valor1 = entrada("Digite o primeiro valor!");
+        double valor2 = entrada("Digite o segundo valor!");
 
-        double[] info = entrada();
-        double valor1 = info[0];
-        double valor2 = info[1];
-
-        double soma = somar(valor1, valor2);
+        double somar = somar(valor1, valor2);
         double diferenca = subtrair(valor1, valor2);
         double produto= multiplicar(valor1, valor2);
         double quociente = divisao(valor1, valor2);
 
-        saida(valor1, '+', valor2, soma);
+        saida(valor1, '+', valor2, somar);
+        saida(valor1, '-', valor2, diferenca);
+        saida(valor1, '*', valor2, produto);
+        saida(valor1, '/', valor2, quociente);
         
-
-
     }
 
 
@@ -44,21 +43,16 @@ class Met1{
     }
 
     //método para entrada de dados
-    public static double[] entrada(){
+    public static double entrada(String frase){
         Scanner input = new Scanner(System.in);
-
-        System.out.println("Digite o primeiro valor");
-        double valor1 = input.nextDouble();
-        System.out.println("Digite o segundo valor");
-        double valor2 = input.nextDouble();
-
-        double[] valores = {valor1, valor2};
-        return valores;
+        System.out.println(frase);
+        double numero = input.nextDouble();
+        return numero;
     }
 
     //método para exibir a saida
     public static void saida(double val1,char op, double val2, double result){
-        System.out.println(val1 + " " + op + val2 + " = " + res);
+        System.out.println(val1 + " " + op + " " + val2 + " = " + result);
 
         
     }
